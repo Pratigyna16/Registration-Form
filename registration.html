@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <h2 class="title">Registration Form</h2>
+        <div class="form-container">
+
+
+            <form action="education.html" autocomplete="off" method="post" onsubmit="return validation()">
+
+                <div class="field">
+                    <label for="name">Name:</label><span>*</span><br>
+                    <input type="text" id="name" name="name" placeholder="First Name">
+                    <input type="text" id="lname" name="lname" placeholder="Last Name">
+                    <span id="user"></span>
+                    <span id="user1"></span>
+
+                </div>
+
+
+                <div class="field">
+                    <label for="mail">Email:</label><span>*</span><br>
+                    <input type="email" id="mail" name="mail" placeholder="Enter your Email Id">
+                    <span id="mailid"></span>
+                </div>
+
+
+                <div class="field">
+                    <label for="date">Date of Birth:</label><span>*</span><br>
+                    <input type="date" id="date" name="date"><br>
+                    <span id="dob"></span>
+
+                </div>
+
+
+                <div class="field">
+                    <label for="fname">Father's Name:</label><span>*</span><br>
+                    <input type="text" id="fname" name="fname" placeholder="First Name">
+                    <input type="text" id="flname" name="flname" placeholder="Last Name">
+                    <span id="ffirst"></span>
+                    <span id="flast"></span>
+
+                </div>
+
+
+                <div class="field">
+                    <label for="mname">Mother's Name:</label><span>*</span><br>
+                    <input type="text" id="mname" name="mname" placeholder="First Name">
+                    <input type="text" id="mlname" name="mlname" placeholder="Last Name">
+                    <span id="mfirst"></span>
+                    <span id="mlast"></span>
+                </div>
+
+
+                <div class="field">
+                    <label for="gender">Gender:</label><span>*</span><br>
+                    <input type="radio" id="gen" name="gender" value="Male" required>Male
+                    <input type="radio" id="gen" name="gender" value="Female" required>Female
+                    <span id="genderr"></span>
+
+
+                </div>
+
+
+                <div class="field">
+                    <label for="ntn">Nationality:</label><span>*</span><br>
+                    <input type="text" id="ntn" name="ntn">
+                    <span id="nation"></span>
+                </div>
+
+
+                <div class="field">
+                    <label for="add">Permanent Address:</label><span>*</span><br>
+                    <input type="text" id="add" name="add" placeholder="Street Adresss" size="100"><br>
+                    <input type="text" id="dis" name="dis" placeholder="District">
+                    <input list="country" placeholder="Select Country" id="coun" name="coun">
+                    <datalist id="country">
+                        <option>Australia</option>
+                        <option>America</option>
+                        <option>Afghanistan</option>
+                        <option>Bangladesh</option>
+                        <option>Bulgaria</option>
+                        <option>Canada</option>
+                        <option>China</option>
+                        <option>Denmark</option>
+                        <option>India</option>
+                        <option>Greece</option>
+                        <option>Russia</option>
+                    </datalist>
+                    <span id="place"></span>
+                    <span id="area"></span>
+                    <span id="countryy"></span>
+                </div>
+
+
+                <div class="field">
+                    <label for="num">Contact No:</label><span>*</span><br>
+                    <input type="tel" id="num" name="num" placeholder="### ### ####"><br>
+                    <span id="number"></span>
+                </div>
+
+
+                <div class="field">
+                    <label for="num1">Alternate No:</label><br>
+                    <input type="tel" id="num1" name="num1" placeholder="### ### ####"><br>
+                    <!-- pattern="[0-9]{10}" -->
+                    <span id="number1"></span>
+                </div>
+
+
+                <input type="reset" id="rebtn">
+                <button id="btn1" name="btn1" onclick="storeData()">Submit & Next</button>
+
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+
+    // -------------------Registration Form Data Storage----------------
+
+    function storeData() {
+
+        // Retrieving the data
+        var name = document.getElementById("name").value;
+        var lname = document.getElementById("lname").value;
+        var mail = document.getElementById("mail").value;
+        var date = document.getElementById("date").value;
+        var fname = document.getElementById("fname").value;
+        var mname = document.getElementById("mname").value;
+        var gender = document.getElementById("gen").value;
+        var ntn = document.getElementById("ntn").value;
+        var add = document.getElementById("add").value;
+        var dis = document.getElementById("dis").value;
+        var coun = document.getElementById("coun").value;
+        var num = document.getElementById("num").value;
+        var num1 = document.getElementById("num1").value;
+        gender.checked ? gen = "Male" : gen = "Female";
+
+
+        // Storing Data in local storage
+        localStorage.setItem("Firstname", name);
+        localStorage.setItem("Lastname", lname);
+        localStorage.setItem("EmailID", mail);
+        localStorage.setItem("DateOfBirth", date);
+        localStorage.setItem("Fathername", fname);
+        localStorage.setItem("Mothername", mname);
+        localStorage.setItem("Gender", gender);
+        localStorage.setItem("Nationality", ntn);
+        localStorage.setItem("Address", add);
+        localStorage.setItem("District", dis);
+        localStorage.setItem("Country", coun);
+        localStorage.setItem("Number", num);
+        localStorage.setItem("Altno", num1);
+
+    }
+
+</script>
+
+</html>

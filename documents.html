@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+    <div class="main1">
+
+        <h2 class="title 2">Documents</h2>
+
+        <div class="doc-container">
+
+            <form method="post">
+
+
+                <div class="field">
+                    <label for="files">Recent Passport Size Photograph:<br>
+                        <span class="demo">(Image size should be less than 4MB)</span></label><br>
+                    Browse a File: <input type="file" id="file1" name="file1" required onchange="docValidation()">
+                </div>
+
+
+                <div class="field">
+                    <label for="files">HSC Marksheet:<br>
+                        <span class="demo">(Image,PDF,docs size should be less than 4MB)</span></label><br>
+                    Upload File: <input type="file" id="hscfile" name="hscfile" required onchange="docValidation1()">
+                </div>
+
+
+                <div class="field">
+                    <label for="files">SSC Marksheet:<br>
+                        <span class="demo">(Image,PDF,docs size should be less than 4MB)</span></label><br>
+                    Upload File: <input type="file" id="sscfile" name="sscfile" required onchange="docValidation2()">
+                </div>
+
+
+                <div class="field">
+                    <label for="files">All Semester Marksheet in a single PDF or Docs:<br>
+                        <span class="demo">(File size must be less than 10MB)</span></label><br>
+                    Upload File: <input type="file" id="doc" name="doc" required onchange="docValidation3()">
+                </div>
+
+
+                <div class="field">
+                    <input type="checkbox" id="chk" name="chk" required>
+                    I agree that all the documents submitted by me are correct.<span>*</span>
+                </div>
+
+
+
+                <a href="education.html" id="btn2">Previous</a>
+                <!-- <input type="button" id="btn2" value="Previous"> -->
+                <button id="btn1" name="btn1" onclick="finalData()">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    // Documents
+    function finalData() {
+        var file1 = document.getElementById("file1").value;
+        var hscfile = document.getElementById("hscfile").value;
+        var sscfile = document.getElementById("sscfile").value;
+        var doc = document.getElementById("doc").value;
+
+
+        localStorage.setItem("Passport", file1);
+        localStorage.setItem("HSC_Marksheet", hscfile);
+        localStorage.setItem("SSC_Marksheet", sscfile);
+        localStorage.setItem("Documents", doc);
+
+    }
+
+</script>
+
+</html>

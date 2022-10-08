@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualification</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <h2 class="title 1">Educational Qualification</h2>
+
+        <div class="form-container">
+            <form action="documents.html" method="post" onsubmit="return education()" autocomplete="off">
+
+
+                <div class="field1">
+                    <label for="hsc">HSC Institution Name:</label><span>*</span><br>
+                    <input type="text" id="hsc" name="hsc" placeholder="Enter Your Institution Name">
+                    <span id="iname"></span>
+                </div>
+
+
+                <div class="field1">
+                    <input list="board" placeholder="Select Board" id="hscboard">
+                    <datalist id="board">
+                        <option>State Board</option>
+                        <option>CBSE</option>
+                        <option>ICSC</option>
+                    </datalist>
+
+                    <input type="text" id="hscper" name="hscper" placeholder="HSC Percentage">
+                    <span id="boardd"></span>
+                    <span id="mark1"></span>
+                </div>
+
+
+                <div class="field1">
+                    <label for="ssc">SSC Institution Name:</label><span>*</span><br>
+                    <input type="text" id="ssc" name="ssc" placeholder="Enter Your Institution Name">
+                    <span id="iname1"></span>
+                </div>
+
+
+                <div class="field1">
+                    <input list="board" placeholder="Select Board" id="sscboard">
+                    <datalist id="board">
+                        <option>CHSE</option>
+                        <option>CBSE</option>
+                        <option>ICSC</option>
+                    </datalist>
+                    <input type="text" id="sscper" name="sscper" placeholder="SSC Percentage">
+                    <span id="board1"></span>
+                    <span id="mark2"></span>
+                </div>
+
+
+                <div class="field1">
+                    <label for="pur">Currently Pursuing:</label><span>*</span><br>
+                    <input type="text" id="pur" name="pur">
+                    <span id="stream"></span>
+                </div>
+
+
+                <div class="field1">
+                    <label for="c1"> Current Educational Institution Name:</label><span>*</span><br>
+                    <input type="text" id="c1" name="c1" placeholder="Enter Your Institution Name">
+                    <span id="iname2"></span>
+                </div>
+
+
+                <div class="field1">
+                    <label for="per1">Overall Percentage:</label><span>*</span><br>
+                    <input type="text" id="per1" name="per1" placeholder="Percentage">
+                    <span id="mark3"></span>
+                </div>
+
+
+                <div class="field1">
+                    <label for="back">Backlog (If Any)</label><span>*</span>
+                    <input type="radio" id="back" name="back" value="Yes" required>Yes
+                    <input type="radio" id="back" name="back" value="No" required>No
+                </div>
+
+
+                <a href="registration.html" id="btn2">Previous</a>
+                <button id="btn1" name="btn1" onclick="submitData()">Submit & Next</button>
+
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    // Educational Qualification
+    function submitData() {
+
+        var hsc = document.getElementById("hsc").value;
+        var hscboard = document.getElementById("hscboard").value;
+        var hscper = document.getElementById("hscper").value;
+        var ssc = document.getElementById("ssc").value;
+        var sscboard = document.getElementById("sscboard").value;
+        var sscper = document.getElementById("sscper").value;
+        var pur = document.getElementById("pur").value;
+        var c1 = document.getElementById("c1").value;
+        var per1 = document.getElementById("per1").value;
+        var back = document.getElementById("back").value;
+        back.checked ? back = "Yes" : back = "No";
+
+        localStorage.setItem("HSC", hsc);
+        localStorage.setItem("HSC_Board", hscboard);
+        localStorage.setItem("HSC_Percentage", hscper);
+        localStorage.setItem("SSC", ssc);
+        localStorage.setItem("SSC_Board", sscboard);
+        localStorage.setItem("SSC_Percentage", sscper);
+        localStorage.setItem("Pursuing", pur);
+        localStorage.setItem("Current_Institution", c1);
+        localStorage.setItem("Percentage", per1);
+        localStorage.setItem("Backlog", back);
+
+    }
+
+
+</script>
+
+</html>
